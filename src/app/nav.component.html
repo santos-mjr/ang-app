@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-sm navbar fixed-top">
+    <a id="logo" href="http://localhost:4200/">Kotse-Ko</a>
+    <ul>
+        <li>
+            <a id="home" routerLink="/">Home</a>
+        </li>
+        <li>
+            <a routerLink="/vehicles">Vehicles</a>
+        </li>
+        <li>
+            <a routerLink="/addvehicle">Add Vehicle</a>
+        </li>
+        <li>
+            <a routerLink="/profile">Profile</a>
+        </li>
+        <li>
+        <ng-container *ngIf="authService.isAuthenticated$ | async;
+        else loggedOut">
+                <button id="bn" (click)="authService.logout()"
+                style="margin-left: 900px">
+                    Logout
+                </button>
+            </ng-container>
+        </li>
+    </ul>
+
+    <div>
+        <ng-template #loggedOut>
+            <button id="bn" (click)="authService.loginWithRedirect( {
+                    appState : { target : this.router.url } } )"
+                    style="margin-left: 900px">
+                Login
+            </button>
+        </ng-template>
+    </div>
+
+</nav>

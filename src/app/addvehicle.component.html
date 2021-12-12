@@ -1,0 +1,112 @@
+<div class="container" style="margin-top: 190px;">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2 style="font-weight: 300; text-align: center;">Add a new Vehicle</h2>
+            <hr style="margin-bottom: 10px;">
+
+            <br>
+            <ng-template #loggedOut>
+                <h5>To add a vehicle, please Login.</h5>
+            </ng-template>
+            <ng-container
+            *ngIf = "authService.isAuthenticated$ | async; 
+            else loggedOut">    
+            <form [formGroup]="AddVehicleForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="Make" style="margin-bottom: 5px; margin-top: 5px;">Make:</label>
+                    <input type="text" placeholder="Make" id="Make" name="Make" class="form-control"
+                        formControlName="Make" [ngClass]="{ 'error' : isInvalid('Make') }">
+                </div>
+                <div class="form-group">
+                    <label for="Model" style="margin-bottom: 5px; margin-top: 5px;">Model:</label>
+                    <input type="text" placeholder="Model" id="Model" name="Model" class="form-control"
+                        formControlName="Model" [ngClass]="{ 'error' : isInvalid('Model') }">
+                </div>
+                <div class="form-group">
+                    <label for="Year" style="margin-bottom: 5px; margin-top: 5px;">Year:</label>
+                    <input type="text" placeholder="Year" id="Year" name="Year" class="form-control"
+                        formControlName="Year" [ngClass]="{ 'error' : isInvalid('Year') }">
+                </div>
+                <div class="form-group">
+                    <label for="Engine_Fuel_Type" style="margin-bottom: 5px; margin-top: 5px;">Engine Fuel Type:</label>
+                    <select name="Engine_Fuel_Type" id="Engine_Fuel_Type" class="form-control" aria-placeholder=""
+                        formControlName="Engine_Fuel_Type">
+                        <option>-- Select Fuel Type --</option>
+                        <option value="Diesel">Diesel</option>
+                        <option value="Petrol">Petrol</option>
+                        <option value="Electric">Electric</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="Horsepower" style="margin-bottom: 5px; margin-top: 5px;">Horsepower:</label>
+                    <input type="text" placeholder="Horsepower (bhp)" id="Horsepower" name="Horsepower"
+                        class="form-control" formControlName="Horsepower"
+                        [ngClass]="{ 'error' : isInvalid('Horsepower') }">
+                </div>
+                <div class="form-group">
+                    <label for="Transmission" style="margin-bottom: 5px; margin-top: 5px;">Transmission</label>
+                    <select name="Transmission" id="Transmission" class="form-control" formControlName="Transmission"
+                        aria-placeholder="" [ngClass]="{ 'error' : isInvalid('Transmission') }">
+                        <option>-- Select Transmission --</option>
+                        <option value="Automatic">Automatic</option>
+                        <option value="Petrol">Manual</option>
+                        <option value="CVT">CVT</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="Driven_Wheels" style="margin-bottom: 5px; margin-top: 5px;">Driven_Wheels</label>
+                    <select name="Driven_Wheels" id="Driven_Wheels" class="form-control" formControlName="Driven_Wheels"
+                        aria-placeholder="" [ngClass]="{ 'error' : isInvalid('Driven_Wheels') }">
+                        <option>-- Select Driven Wheels --</option>
+                        <option value="2_drive">2 Drive</option>
+                        <option value="3_drive">3 Drive</option>
+                        <option value="4_drive">4 Drive</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="Number_of_Doors" style="margin-bottom: 5px; margin-top: 5px;">Number of Doors</label>
+                    <select name="Number_of_Doors" id="Number_of_Doors" class="form-control"
+                        formControlName="Number_of_Doors" aria-placeholder=""
+                        [ngClass]="{ 'error' : isInvalid('Number_of_Doors') }">
+                        <option>-- Select Number_of_Doors --</option>
+                        <option value="2_door">2</option>
+                        <option value="3_door">3</option>
+                        <option value="4_door">4</option>
+                        <option value="5_door">5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="Market_Category" style="margin-bottom: 5px; margin-top: 5px;">Market Category:</label>
+                    <input type="text" placeholder="Market Category" id="Market_Category" name="Market_Category"
+                        class="form-control" formControlName="Market_Category"
+                        [ngClass]="{ 'error' : isInvalid('Market_Category') }">
+                </div>
+                <div class="form-group">
+                    <label for="Vehicle_Style" style="margin-bottom: 5px; margin-top: 5px;">Vehicle Style:</label>
+                    <input type="text" placeholder="Vehicle Style" id="Vehicle_Style" name="Vehicle_Style"
+                        class="form-control" formControlName="Vehicle_Style"
+                        [ngClass]="{ 'error' : isInvalid('Vehicle_Style') }">
+                </div>
+                <div class="form-group">
+                    <label for="Price" style="margin-bottom: 5px; margin-top: 5px;">Price:</label>
+                    <input type="text" placeholder="Price (£)" id="Price" name="Price" class="form-control"
+                        formControlName="Price" [ngClass]="{ 'error' : isInvalid('Price') }">
+                </div>
+                <div class="form-group">
+                    <label for="image_link" style="margin-bottom: 5px; margin-top: 5px;">Image Link:</label>
+                    <input type="text" placeholder="Image Link" id="image_link" name="image_link" class="form-control"
+                        formControlName="image_link" [ngClass]="{ 'error' : isInvalid('image_link') }">
+                </div>
+
+                <span *ngIf="isIncomplete()">
+                    You must complete all fields to submit!
+                </span>
+
+                <br>
+                <button *ngIf="!isIncomplete()" type="submit" class="btn btn-dark"
+                    style="margin-bottom: 20px;">Submit</button>
+            </form>
+            </ng-container>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="container" style="margin-top: 200px;">
+
+    <div class="wrapper">
+        <h2 class="text-center mb-5">Vehicle Directory System</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <img src="https://clipground.com/images/logo-search-png-1.png"
+                        style="background-size: contain;" />
+                        <div class="card-body">
+                            <h3>Browse over 10,000 cars</h3>
+                            <p class="text-justify">Browse from over 10,000 vehicles from the 
+                                database, leave a review and more!
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-light" [routerLink]="['/vehicles']">View</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <img
+                            src="https://cdn.onlinewebfonts.com/svg/img_192086.png" 
+                            style="background-size: contain; transform: scale(0.7,0.7);"/>
+                        <div class="card-body">
+                            <h3>Add a new Vehicle!</h3>
+                            <p class="text-justify">Add a new vehicle to the current directory, must be logged
+                                in to do so.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-light" [routerLink]="['/addvehicle']">View</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <img src="https://th.bing.com/th/id/R.08cec215af8202a127226167f42c86c2?rik=JMBg9N%2fXjGxLcw&riu=http%3a%2f%2fwww.theweboasis.com%2fwp-content%2fuploads%2fWebsite-and-Logo-Design-Reviews.jpg&ehk=gubW7PpUhLMnzZLjdsTUAs79nLefxKteFoUvGZCXWdc%3d&risl=&pid=ImgRaw&r=0" 
+                        style="transform: scale(0.9, 0.9); background-size: contain;"/>
+                        <div class="card-body">
+                            <h3>Review it!</h3>
+                            <p class="text-justify">Review a vehicle from the vehicle directory from over
+                                10,000 vehicles to browse.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-light" [routerLink]="['/vehicles']">View</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

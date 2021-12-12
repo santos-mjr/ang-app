@@ -1,0 +1,88 @@
+<div class="container">
+<div class="row" style="margin-top: 190px;">
+    <h2 style="text-align: center;">Modify a Vehicle</h2>
+    <hr>
+        <div class="col-sm-12">
+            <form [formGroup] = "form" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="Make">Make</label>
+                    <input type="text" id="Make" name="Make"
+                        class="form-control" formControlName="Make">                        
+                </div>
+                <div class="form-group">
+                    <label for="Model">Model</label>
+                    <input type="text" id="Model" name="Model"
+                        class="form-control" formControlName="Model">                        
+                </div>
+                <div class="form-group">
+                    <label for="Year">Year</label>
+                    <input type="text" id="Year" name="Year"
+                        class="form-control" formControlName="Year">                        
+                </div>
+                <div class="form-group">
+                    <label for="Engine_Fuel_Type">Engine Fuel Type</label>
+                    <select name="Engine_Fuel_Type" id="Engine_Fuel_Type" class="form-control"
+                    formControlName="Engine_Fuel_Type">
+                        <option>-- Select Fuel Type --</option>
+                        <option value="Diesel">Diesel</option>
+                        <option value="Petrol">Petrol</option>
+                    </select>                      
+                </div>
+                <div class="form-group">
+                    <label for="Horsepower">Horsepower</label>
+                    <input type="text" id="Horsepower" name="Horsepower"
+                        class="form-control" formControlName="Horsepower">                        
+                </div>
+                <div class="form-group">
+                    <label for="Transmission">Transmission</label>
+                    <select name="Transmission" id="Transmission" class="form-control"
+                    formControlName="Transmission">
+                        <option>-- Select Transmission --</option>
+                        <option value="Automatic">Automatic</option>
+                        <option value="Petrol">Manual</option>
+                    </select>                      
+                </div>
+                <div class="form-group">
+                    <label for="Driven_Wheels">Driven_Wheels</label>
+                    <select name="Driven_Wheels" id="Driven_Wheels" class="form-control"
+                    formControlName="Driven_Wheels">
+                        <option>-- Select Driven Wheels --</option>
+                        <option value="2_drive">2 Drive</option>
+                        <option value="3_drive">3 Drive</option>
+                        <option value="4_drive">4 Drive</option>
+                    </select>                      
+                </div>
+                <div class="form-group">
+                    <label for="Number_of_Doors">Number of Doors</label>
+                    <select name="Number_of_Doors" id="Number_of_Doors" class="form-control"
+                    formControlName="Number_of_Doors">
+                        <option>-- Select Number_of_Doors --</option>
+                        <option value="2_door">2</option>
+                        <option value="3_door">3</option>
+                        <option value="4_door">4</option>
+                        <option value="5_door">5</option>
+                    </select>                      
+                </div>
+                <div class="form-group">
+                    <label for="Market_Category">Market Category</label>
+                    <input type="text" id="Market_Category" name="Market_Category"
+                        class="form-control" formControlName="Market_Category">                        
+                </div>
+                <div class="form-group">
+                    <label for="Vehicle_Style">Vehicle Style</label>
+                    <input type="text" id="Vehicle_Style" name="Vehicle_Style"
+                        class="form-control" formControlName="Vehicle_Style">                        
+                </div>
+                <div class="form-group">
+                    <label for="MSRP">MSRP (£)</label>
+                    <input type="text" id="MSRP" name="MSRP"
+                        class="form-control" formControlName="MSRP">                        
+                </div>
+
+                <br>
+                <button type="submit"
+                        class="btn btn-dark">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
